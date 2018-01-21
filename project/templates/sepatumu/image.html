@@ -1,0 +1,57 @@
+{% extends 'sepatumu/base.html' %} {% block content %}
+
+<header class="header-search">
+    <div class="ui secondary menu" id="header-search-menu">
+        <div class="ui container">
+            <div class="right menu">
+                <a class="item" href="/" data-tooltip="RSDH" data-inverted="" data-position="right center">
+                    <img class="ui image" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt="RSDH Logo">
+                </a>
+                <a class="item active" href="/sepatumu/image">
+                    Gambar
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="ui middle aligned center aligned grid" id="main-search">
+    <div class="column">
+        <div class="ui text container">
+            <a href="/sepatumu">
+                <img class="ui centered medium image" src="{{ url_for('static', filename='sepatumu/SepatuMu.svg') }}" alt="SepatuMu">
+            </a>
+            <p>Cari semua gambar sepatu snickers di SepatuMu</p>
+            <br/>
+            <form class="ui form" method="post" action="/sepatumu/image/result" enctype = "multipart/form-data">
+                <div class="field">
+                    <div class="ui fluid big icon input">
+                        <input type="file" name="search" required style="border-radius: 30px;">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+                <br/>
+                <div class="field">
+                    <input class="ui big primary button" type="submit" name="submit" value="Cari di SepatuMu" style="border-radius: 30px;"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="ui text menu">
+        <div class="ui container">
+            <div class="item">
+                &copy; 2017, Sepatumu
+            </div>
+            <div class="right item">
+                <a class="item" href="/">
+                    Rasyadh Abdul Aziz
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

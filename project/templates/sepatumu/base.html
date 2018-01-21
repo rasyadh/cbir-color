@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>{{ title }} - SepatuMu</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="SepatuMu" />
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='sepatumu/favicon.png') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/semantic.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sepatumu.css') }}" />
+</head>
+
+<body>
+    {% block content %} {% endblock %}
+
+    <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{url_for('static', filename='js/semantic.min.js') }}"></script>
+</body>
+
+</html>

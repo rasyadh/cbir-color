@@ -1,0 +1,24 @@
+{% extends 'sepatumu/base.html' %} {% block content %}
+
+<div class="ui container" style="padding: 30px;">
+    <h2>Gambar Sepatu Snickers</h2>
+    <a class="ui button" href="/sepatumu/image/process_features">Proses Fitur Color</a>
+    <a class="ui button" href="/sepatumu/image/process_features_texture">Proses Fitur Texture</a>
+    <br /><br />
+
+    <div class="ui four cards">
+        {% for datas in data['features'] %}
+        <div class="card">
+            <div class="image">
+                <img src="{{ url_for('static', filename='dataset/' + datas.name) }}">
+            </div>
+            <div class="content">
+                <div class="header">{{ datas.name }} </div>
+                <div class="meta">{{ datas.url }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

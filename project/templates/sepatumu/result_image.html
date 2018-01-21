@@ -1,0 +1,50 @@
+{% extends 'sepatumu/base.html' %} {% block content %}
+
+<section class="result">
+    <div class="ui container" id="result-search">
+        <a href="/sepatumu/image">
+            <img class="ui centered medium image" src="{{ url_for('static', filename='sepatumu/SepatuMu.svg') }}" alt="SepatuMu Image">
+        </a>
+        <h3>Gambar yang dicari</h3>
+        <div class="ui card">
+            <div class="image">
+                <img src="{{ url_for('static', filename=query[0].photo) }}" />
+            </div>
+            <div class="content">
+                <div class="header"><a href="{{ query[0].url }}">{{ query[0].name }}</a></div>
+                <div class="meta" style="color: #00661F;">{{ query[0].url }}</div>
+            </div>
+        </div>
+        <br/>
+    </div>
+</section>
+
+<div class="ui container" id="result-content">
+    <h3>Hasil Pencarian</h3>
+    {% if data %}
+    <div class="ui four cards">
+        {% for result in data['result'] %}
+        <div class="card">
+            <div class="image">
+                <img src="{{ url_for('static', filename=result.photo) }}"/>
+            </div>
+            <div class="content">
+                <div class="header">
+                    <a href="{{ query.url }}">{{ result.name }}</a>
+                </div>
+                <div class="meta" style="color: #00661F;">{{ result.url }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="ui fluid card">
+        <div class="content">
+            <div class="header">tidak ditemukan.</div>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

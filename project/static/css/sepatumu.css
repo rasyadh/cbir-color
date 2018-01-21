@@ -1,0 +1,40 @@
+#main-search {
+    height: 100%;
+}
+
+.header-search {
+    position:absolute;
+    top: 0;
+    width:100%;
+}
+
+#header-search-menu {
+    margin-top: 20px;
+}
+
+.pattern {
+    position: absolute;
+    bottom: 65px;
+    width: 100%;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:#fafafa;
+    border-top: solid 1px #ebebeb;
+}
+
+.result {
+    background: #fafafa;
+    border-bottom: solid 1px #ebebeb;
+}
+
+#result-search {
+    padding: 20px 50px 10px 50px;
+}
+
+#result-content {
+    padding: 20px 50px 20px 50px;
+}
